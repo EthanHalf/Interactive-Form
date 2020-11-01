@@ -46,16 +46,33 @@ option.selected = true;
 //hide other color options
 shirtColors.hidden = true;
 
+
 //design event listner for js puns
-designDropDown.addEventListener('click', (e) => {
-    //hide colors in Color select menu
-    let chosen = e.target;
-    
-    if (chosen === jsPunDesign) {
-        jsPunsColors.hidden = true;
-        iHeartJsColors.hidden = false;
-    }else if (chosen === iHeartJsDesign) {
-        iHeartJsColors.hidden = true;
-}       jsPunsColors.hidden = false;
+designDropDown.addEventListener('change', (e) => {
+   //access value attribute of select element and assign to chosen just like what is done for option value with e.target.value
+   /*make chosen go from targeting the select element to targeting the option element by focusing on the thing they both have in common,
+   (a value attribue)*/
+    let chosen = e.target.value;
+
+    //for (let i = 0; i < jsPunsColors.length; i++) {}
+     //hide colors in Color select menu based on design option picked
+    if (chosen.target.value === jsPunDesign) {
+        for (let i = 0;i < iHeartJsColors.length; i++) {
+            while (i <= iHeartJsColors){
+                i.hidden = true;
+            }  
+        }
+        //jsPunsColors.hidden = false;
+        //iHeartJsColors.hidden = true;
+    } else if (chosen.target.value === iHeartJsDesign) {
+        for (let i = 0;i < jsPunsColors.length; i++) {
+            while (i <= iHeartJsColors){
+                i.hidden = true;
+            } 
+            
+        }
+        //iHeartJsColors.hidden = false;
+       //jsPunsColors.hidden = true;
+    }
 });
 
