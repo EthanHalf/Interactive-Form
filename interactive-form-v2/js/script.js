@@ -54,17 +54,14 @@ designDropDown.addEventListener('change', (e) => {
    (a value attribue)*/
     let chosen = e.target.value;
 
-    //for (let i = 0; i < jsPunsColors.length; i++) {}
-     //hide colors in Color select menu based on design option picked
-    if (chosen.target.value === jsPunDesign) {
+    //hide colors in Color select menu based on design option picked
+    if (chosen === jsPunDesign.value) {
         for (let i = 0;i < iHeartJsColors.length; i++) {
-            while (i <= iHeartJsColors){
-                i.hidden = true;
-            }  
+            option.iHeartJsColors.hidden = true; 
         }
         //jsPunsColors.hidden = false;
         //iHeartJsColors.hidden = true;
-    } else if (chosen.target.value === iHeartJsDesign) {
+    } else if (chosen === iHeartJsDesign.value) {
         for (let i = 0;i < jsPunsColors.length; i++) {
             while (i <= iHeartJsColors){
                 i.hidden = true;
